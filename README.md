@@ -2,24 +2,24 @@
 
 # Installation
 
-* Simple project:
+- Simple project:
 
-  * `pip install -r requirements.txt`
+  - `pip install -r requirements.txt`
 
-* Python module (using `pyproject.toml`):
+- Python module (using `pyproject.toml`):
 
-  * `pip install -e .`
+  - `pip install -e .`
 
 # Development
 
-* Install pre-commit
+- Install pre-commit
 
-* Install all dev dependencies 
+- Install all dev dependencies
 
-  * Simple project:
+  - Simple project:
 
-    * `pip install -r requirements_dev.txt`
+    - `pip install -r requirements_dev.txt`
 
-  * Python module (using `pyproject.toml`):
+  - Python module (using `pyproject.toml`):
 
-    * `pip install -e .[dev]`
+    - `pip install -e .[dev]`

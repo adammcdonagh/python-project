@@ -1,0 +1,8 @@
+-r requirements.txt
+pre-commit
+pylint
+pytest
+pydantic
+mypy
+ruff
+black

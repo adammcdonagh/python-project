@@ -20,9 +20,6 @@
       ],
       "settings": {
         "python.defaultInterpreterPath": "/usr/local/bin/python",
-        "python.linting.enabled": true,
-        "python.linting.flake8Enabled": true,
-        "python.linting.pylintEnabled": false,
         "python.formatting.autopep8Path": "/usr/local/py-utils/bin/autopep8",
         "python.formatting.blackPath": "/usr/local/py-utils/bin/black",
         "python.formatting.yapfPath": "/usr/local/py-utils/bin/yapf",
@@ -33,19 +30,35 @@
         "python.linting.pydocstylePath": "/usr/local/py-utils/bin/pydocstyle",
         "python.linting.pylintPath": "/usr/local/py-utils/bin/pylint",
         "http.systemCertificates": true,
+        "python.testing.unittestEnabled": false,
+        "python.testing.pytestEnabled": true,
+        "python.testing.pytestArgs": ["."],
+        "python.analysis.typeCheckingMode": "off",
+        "python.linting.enabled": true,
+        "python.linting.flake8Enabled": false,
+        "python.linting.pylintEnabled": true,
         "python.formatting.provider": "black",
         "files.associations": {
           "*.json": "jsonc"
+        },
+        "files.autoSave": "off", // needed for editor.formatOnSave
+        "files.insertFinalNewline": true, // needed for pre-commit check
+        "files.trimTrailingWhitespace": true,
+        "editor.formatOnType": true,
+        "editor.formatOnSave": true,
+        "editor.rulers": [88],
+        "isort.args": ["--profile", "black"],
+        "pylint.severity": {
+          "convention": "Warning",
+          "info": "Warning"
         }
       }
     }
   },
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  "forwardPorts": [
-    3000
-  ],
+  "forwardPorts": [3000],
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "cd src && pip install -r requirements_dev.txt && pip install -r requirements.txt && pre-commit install",
+  "postCreateCommand": "pip install -r requirements_dev.txt && pre-commit install",
   // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
   "remoteUser": "vscode"
 }
