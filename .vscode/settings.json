@@ -20,5 +20,11 @@
   "pylint.severity": {
     "convention": "Warning",
     "info": "Warning"
+  },
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "editor.defaultFormatter": "ms-python.python"
   }
 }
